@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Last Island Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="header_card">
+      <div class="title">
+        <h1>Last Island Calculator</h1>
+      </div>
+      <div class="header_menu">
+        <button class="Menu">Menu</button>
+        <a href="{{ url_for('index') }}">
+          <button class="Main_page">Main</button>
+        </a>
+        <button class="Support">Support</button>
+        <button class="Donation">Donation</button>
+      </div>
+    </div>
+  </header>
+  <main class="card-support">
+    <h1>Support</h1>
+    
+
+    <form action="{{ url_for('support') }}" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your e-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Menssage:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+    
+    {% if success %}
+      <div class="success">✅ Message sent successfully!</div>
+    {% endif %}
+
+    <a class="btn" href="{{ url_for('index') }}">↩ Return</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+:root {
+  --bg: #151516;
+  --card: #d8d8d8;
+  --accent: #7b0808;
+  --text: #0b0b0b;
+  --muted: #3c3b3b;
+  --error: #cc2828;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Inter, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #012549);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 5px;
+}
+
+.header-card{
+    display: flex;
+    margin: 0;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    background: linear-gradient(180deg, var(--bg), #032c55);
+    height: 100px;
+}
+
+.tittle h1{
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: "Stack Sans Notch", sans-serif;
+}
+
+
+.main-card {
+  background: var(--card);
+  padding: 24px;
+  max-width: 90%;
+  width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(11,11,11,0.06);
+  margin-top: 70px;
+  margin: 70px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 7);
+}
+
+.main-card h1 { margin-top: 0; color: var(--accent); text-align: center; }
+
+.select-type-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.select-type-account button {
+    border: none;
+    background-color: #7b0808;
+    color: #ffffff;
+    height: 30px;
+    width: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+}

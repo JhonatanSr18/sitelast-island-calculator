@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Results — Last Island Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header_card">
+            <div class="title">
+                <h1>Last Island Calculator</h1>
+            </div>
+            <div class="header_menu">
+                <button class="Menu">Menu</button>
+                <button class="Main_page">Main</button>
+                <button class="Support">Support</button>
+                <button class="Donation">Donation</button>
+            </div>
+        </div>
+    </header>
+  <main class="card">
+    <h1>RESULTS</h1>
+
+    <p><strong>You selected:</strong> {{ bomb }}</p>
+    <p><strong>Quantity:</strong> {{ value }}</p>
+
+    <h2>Necessary resourses:</h2>
+    <ul>
+      {% for name, qty in resources.items() %}
+        <li>{{ name | capitalize }}: {{ qty }}</li>
+      {% endfor %}
+    </ul>
+
+    <p class="highlight"><strong>Necessary gunpowder:</strong> {{ gunpowder }}</p>
+
+    <a class="btn" href="{{ url_for('index') }}">↩ Return</a>
+  </main>
+</body>
+</html>

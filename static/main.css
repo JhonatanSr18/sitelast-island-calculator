@@ -154,6 +154,12 @@ footer {
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.container-footer h2 {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #c1bcbc;
+}
+
 /* ================== ANIMAÇÃO ================== */
 @keyframes fadeIn {
   from {

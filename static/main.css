@@ -1,73 +1,199 @@
-:root {
-  --bg: #151516;
-  --card: #d8d8d8;
-  --accent: #7b0808;
-  --text: #0b0b0b;
-  --muted: #3c3b3b;
-  --error: #cc2828;
+/* ================== RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-* { box-sizing: border-box; }
 
 body {
-  margin: 0;
+  font-family: "Stack Sans Notch", sans-serif;
+  color: #e0e6ee;
+  overflow-x: hidden;
+}
+
+/* ================== HEADER ================== */
+header {
+  background: linear-gradient(180deg, #002855 0%, #081420 100%);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header_card {
   display: flex;
   flex-direction: column;
-  font-family: "Segoe UI", Inter, Arial, sans-serif;
-  background: linear-gradient(180deg, var(--bg), #012549);
-  color: var(--text);
-  min-height: 100vh;
-  padding: 5px;
+  align-items: center;
+  gap: 10px;
 }
 
-.header-card{
-    display: flex;
-    margin: 0;
-    background-color: #ffffff;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
-    background: linear-gradient(180deg, var(--bg), #032c55);
-    height: 100px;
+.title h1 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.tittle h1{
-    margin-top: 10px;
-    color: #ffffff;
-    font-family: "Stack Sans Notch", sans-serif;
+.header_menu button {
+  background: transparent;
+  border: 1px solid #00b8a9;
+  color: #e0e6ee;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.header_menu button:hover {
+  background: #00b8a9;
+  color: #081420;
+}
+
+/* ================== FUNDO ================== */
+.background-img img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) blur(2px);
+  z-index: -1;
+}
+
+/* ================== MAIN CARD ================== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  min-height: calc(100vh - 200px);
+}
 
 .main-card {
-  background: var(--card);
-  padding: 24px;
-  max-width: 90%;
-  width: 520px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(11,11,11,0.06);
-  margin-top: 70px;
-  margin: 70px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 7);
+  background: rgba(8, 20, 32, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  max-width: 850px;
+  width: 100%;
+  padding: 50px 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.6s ease;
 }
 
-.main-card h1 { margin-top: 0; color: var(--accent); text-align: center; }
-
-.select-type-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 50px;
+.main-card-content {
+  text-align: center;
 }
 
-.select-type-account button {
-    border: none;
-    background-color: #7b0808;
-    color: #ffffff;
-    height: 30px;
-    width: 60px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 30px;
+/* ================== TEXTOS ================== */
+.main-tittle h1 {
+  color: #00b8a9;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.main-text p,
+.my-mission p,
+.the-creator p,
+.support-info p {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.my-mission h2,
+.the-creator h2,
+.technologies h2,
+.support-info h2 {
+  color: #00b8a9;
+  margin: 30px 0 10px 0;
+  font-size: 1.4rem;
+  border-bottom: 2px solid rgba(0, 184, 169, 0.3);
+  display: inline-block;
+}
+
+/* ================== LISTA ================== */
+.technologies ul {
+  list-style: none;
+  padding: 0;
+}
+
+.technologies li {
+  margin: 10px 0;
+  color: #b7c4d9;
+  position: relative;
+  padding-left: 15px;
+}
+
+.technologies li::before {
+  content: "▹";
+  color: #00b8a9;
+  position: absolute;
+  left: 0;
+}
+
+/* ================== FRASE FINAL ================== */
+.final-mensage {
+  margin-top: 40px;
+}
+
+.final-mensage .quote {
+  font-style: italic;
+  color: #89d6d2;
+  font-size: 1.2rem;
+}
+
+/* ================== FOOTER ================== */
+footer {
+  background: linear-gradient(180deg, #002855 0%, #081420 100%);
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ================== ANIMAÇÃO ================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================== RESPONSIVO ================== */
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 1.6rem;
+  }
+
+  .header_menu a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .main-card {
+    padding: 30px 20px;
+  }
+
+  .main-tittle h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-text p,
+  .my-mission p,
+  .the-creator p,
+  .support-info p {
+    font-size: 1rem;
+  }
+
+  .final-mensage .quote {
+    font-size: 1rem;
+  }
 }

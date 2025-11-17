@@ -1,0 +1,196 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Stack Sans Notch", sans-serif;
+  color: #e0e6ee;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(180deg, #002855 0%, #081420 100%);
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header_menu {
+  display: flex;
+  gap: 10px;
+}
+
+.header_menu button {
+  background: transparent;
+  border: 1px solid #00b8a9;
+  color: #e0e6ee;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.header_menu button:hover {
+  background: #00b8a9;
+  color: #081420;
+}
+
+/* ===== BACKGROUND ===== */
+.background-img img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) blur(2px);
+  z-index: -1;
+}
+
+/* ===== CARD PRINCIPAL ===== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.card {
+  background: rgba(8, 20, 32, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  width: 100%;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease;
+}
+
+.logo-card {
+  width: 90%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  color: #00b8a9;
+  display: block;
+  margin-bottom: 5px;
+}
+
+select, input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #081420;
+}
+
+.calculate-btn {
+  background: #00b8a9;
+  color: #081420;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.calculate-btn:hover {
+  background: #10e4cf;
+  box-shadow: 0 0 15px rgba(16, 228, 207, 0.5);
+}
+
+/* ===== ERROR MESSAGE ===== */
+.error {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff4d4d;
+  color: #ffaaaa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(180deg, #002855 0%, #081420 100%);
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container-footer h2 {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #c1bcbc;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 1.6rem;
+  }
+
+  .header_menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header_menu button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+
+  .calculate-btn {
+    font-size: 0.95rem;
+  }
+}

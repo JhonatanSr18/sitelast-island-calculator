@@ -1,40 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Results — Last Island Calculator</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Results – Last Island Calculator</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS específico da página -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
 </head>
+
 <body>
-    <header>
-        <div class="header_card">
-            <div class="title">
-                <h1>Last Island Calculator</h1>
-            </div>
-            <div class="header_menu">
-                <button class="Menu">Menu</button>
-                <button class="Main_page">Main</button>
-                <button class="Support">Support</button>
-                <button class="Donation">Donation</button>
-            </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header_card">
+      <div class="title">
+        <h1>Last Island Calculator</h1>
+      </div>
+
+      <div class="header_menu">
+          <a href="{{ url_for('about') }}"><button class="about-us">About Us</button></a>
+          <a href="{{ url_for('main') }}"><button class="calculator-page">Main</button></a>
+          <a href="{{ url_for('support') }}"><button class="Support">Support</button></a>
+          <a href="{{ url_for('donation') }}"><button class="Donation">Donation</button></a>
         </div>
-    </header>
-  <main class="card">
-    <h1>RESULTS</h1>
+    </div>
+  </header>
 
-    <p><strong>You selected:</strong> {{ bomb }}</p>
-    <p><strong>Quantity:</strong> {{ value }}</p>
+  <!-- BACKGROUND -->
+  <div class="background-img">
+    <img src="{{ url_for('static', filename='imagens/background-img.jpg') }}" alt="background">
+  </div>
 
-    <h2>Necessary resourses:</h2>
-    <ul>
-      {% for name, qty in resources.items() %}
-        <li>{{ name | capitalize }}: {{ qty }}</li>
-      {% endfor %}
-    </ul>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="card">
 
-    <p class="highlight"><strong>Necessary gunpowder:</strong> {{ gunpowder }}</p>
+      <h1>Results</h1>
 
-    <a class="btn" href="{{ url_for('index') }}">↩ Return</a>
+      <p><strong>You selected:</strong> {{ bomb }}</p>
+      <p><strong>Quantity:</strong> {{ value }}</p>
+
+      <h2>Necessary Resources:</h2>
+      <ul>
+        {% for name, qty in resources.items() %}
+          <li>{{ name|capitalize }}: {{ qty }}</li>
+        {% endfor %}
+      </ul>
+
+      <p class="highlight">
+        <strong>Necessary gunpowder:</strong> {{ gunpowder }}
+      </p>
+
+      <a class="btn" href="{{ url_for('main') }}">⟵ Return</a>
+    </div>
   </main>
+
+  <footer>
+    <div class="content-footer">
+      <div class="container-footer">
+        <h2>© 2025 Last Island Calculator</h2>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

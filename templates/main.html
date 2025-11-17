@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Island Calculator</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='calculator.css') }}">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header_card">
+      <div class="title">
+        <h1>Last Island Calculator</h1>
+      </div>
+      <div class="header_menu">
+        <a href="{{ url_for('about') }}"><button class="about-us">About Us</button></a>
+        <a href="{{ url_for('main') }}"><button class="calculator-page">Main</button></a>
+        <a href="{{ url_for('support') }}"><button class="Support">Support</button></a>
+        <a href="{{ url_for('donation') }}"><button class="Donation">Donation</button></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BACKGROUND ===== -->
+  <div class="background-img">
+    <img src="{{ url_for('static', filename='imagens/background-img.jpg') }}" alt="background">
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <div class="card">
+      <img src="{{ url_for('static', filename='imagens/banner last island.png') }}" alt="logo-card" class="logo-card">
+
+      <h1>Resources Calculator</h1>
+
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+
+      <form action="{{ url_for('calculate') }}" method="post" class="form">
+        <div class="form-group">
+          <label for="bomb">Bomb Selector:</label>
+          <select id="bomb" name="bomb" required>
+            <option value="oil" {% if previous_bomb == 'oil' %}selected{% endif %}>Oil</option>
+            <option value="tnt" {% if previous_bomb == 'tnt' %}selected{% endif %}>TNT</option>
+            <option value="c4" {% if previous_bomb == 'c4' %}selected{% endif %}>C4</option>
+            <option value="ciclonite" {% if previous_bomb == 'ciclonite' %}selected{% endif %}>Ciclonite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="value">Quantity:</label>
+          <input type="number" id="value" name="value" min="1" value="{{ previous_value or 1 }}" required>
+        </div>
+
+        <button type="submit" class="calculate-btn">Calculate</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="content-footer">
+      <div class="container-footer">
+        <h2>© 2025 Last Island Calculator</h2>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

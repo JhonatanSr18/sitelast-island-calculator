@@ -1,53 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Last Island Calculator</title>
+    <meta charset="utf-8">
+    <title>Support – Last Island Calculator</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='support.css') }}">
 </head>
+
 <body>
-  <header>
+<div class="background-img">
+    <img src="{{ url_for('static', filename='imagens/background-img.jpg') }}" alt="">
+</div>
+<header>
     <div class="header_card">
-      <div class="title">
-        <h1>Last Island Calculator</h1>
-      </div>
-      <div class="header_menu">
-        <button class="Menu">Menu</button>
-        <a href="{{ url_for('index') }}">
-          <button class="Main_page">Main</button>
-        </a>
-        <button class="Support">Support</button>
-        <button class="Donation">Donation</button>
-      </div>
+        <div class="title">
+            <h1>Last Island Calculator</h1>
+        </div>
+        <div class="header_menu">
+          <a href="{{ url_for('about') }}"><button class="about-us">About Us</button></a>
+          <a href="{{ url_for('main') }}"><button class="calculator-page">Main</button></a>
+          <a href="{{ url_for('support') }}"><button class="Support">Support</button></a>
+          <a href="{{ url_for('donation') }}"><button class="Donation">Donation</button></a>
+        </div>
     </div>
-  </header>
-  <main class="card-support">
+</header>
+
+<main class="card-support">
+
     <h1>Support</h1>
-    
 
-    <form action="{{ url_for('support') }}" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <form action="{{ url_for('support') }}" method="post" class="support-form">
 
-      <label for="email">Your e-mail:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="message">Menssage:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="email">Your e-mail:</label>
+        <input type="email" id="email" name="email" required>
 
-      <button type="submit">Send</button>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn-submit">Send</button>
     </form>
-    
+
     {% if success %}
-      <div class="success">✅ Message sent successfully!</div>
+        <div class="success">
+            <span>✔</span> Message sent successfully!
+        </div>
     {% endif %}
 
-    <a class="btn" href="{{ url_for('index') }}">↩ Return</a>
-  </main>
+    <a class="btn" href="{{ url_for('main') }}">⟵ Return</a>
+
+</main>
+<footer>
+    <div class="content-footer">
+      <div class="container-footer">
+        <h2>© 2025 Last Island Calculator</h2>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

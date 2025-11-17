@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation – Last Island Calculator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='donation.css') }}">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="header_card">
+        <div class="title">
+            <h1>Last Island Calculator</h1>
+        </div>
+
+        <div class="header_menu">
+            <a href="/"><button>About Us</button></a>
+            <a href="/main"><button>Main</button></a>
+            <a href="/support"><button>Support</button></a>
+            <button class="active">Donation</button>
+        </div>
+    </div>
+</header>
+
+
+<!-- ===== BACKGROUND ===== -->
+<div class="background-img">
+    <img src="{{ url_for('static', filename='imagens/background-img.jpg') }}" alt="">
+</div>
+
+
+<!-- ===== MAIN CARD ===== -->
+<main class="card">
+
+    <h1 class="donation-title">Support the Project ❤️</h1>
+
+    <p class="donation-text">
+        This website was created with dedication to help the Last Island community.
+        If you want to support my work and help maintain the project online,
+        consider making a donation.  
+    </p>
+
+    <p class="donation-text">
+        Anything helps — you choose the value.  
+    </p>
+
+    <div class="donation-box">
+        <h2>Donation Options</h2>
+
+        <div class="method">
+            <h3>💰 PIX (Brasil)</h3>
+            <p class="pix-key">0b07fcb2-dc0c-4b98-8d6d-37cbcae642f8</p>
+        </div>
+
+        <div class="method">
+            <h3>🌎 (International)</h3>
+            <a class="donation-btn" href="link.mercadopago.com.br/lastislandcalculator">Donate with link</a>
+        </div>
+    </div>
+
+    <a href="/" class="btn-return">⟳ Return</a>
+
+</main>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container-footer">
+        <h2>© 2025 Last Island Calculator</h2>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Island Calculator</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header_card">
+      <div class="title">
+        <h1>Last Island Calculator</h1>
+      </div>
+      <div class="header_menu">
+        <a href="{{ url_for('about') }}"><button class="about-us">About Us</button></a>
+        <a href="{{ url_for('main') }}"><button class="calculator-page">Main</button></a>
+        <a href="{{ url_for('support') }}"><button class="Support">Support</button></a>
+        <a href="{{ url_for('donation') }}"><button class="Donation">Donation</button></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fundo -->
+  <div class="background-img">
+    <img src="{{ url_for('static', filename='imagens/background-img.jpg') }}" alt="background">
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="main-card">
+      <div class="main-card-content">
+
+        <div class="main-tittle">
+          <h1>About Us</h1>
+        </div>
+
+        <div class="main-text">
+          <p>I am one player and developer student passionate about survival games. Last Island Calculator was created to help players calculate resources, craft efficiently, and save time.</p>
+        </div>
+
+        <div class="my-mission">
+          <h2>Our Mission</h2>
+          <p>Our goal is to make your experience in Last Island easier and more enjoyable by providing accurate, easy-to-use tools that simplify complex resource calculations.</p>
+        </div>
+
+        <div class="the-creator">
+          <h2>The Creator</h2>
+          <p>Hi! My name is Jhonatan Rocha — a developer and gamer who loves to create useful tools for the community. This project was born out of my own need to optimize time in-game and share something helpful with others.</p>
+        </div>
+
+        <div class="technologies">
+          <h2>Technologies</h2>
+          <ul>
+            <li>Python (Flask Framework)</li>
+            <li>HTML, CSS, and Responsive Design</li>
+            <li>Google Fonts & Gradient UI</li>
+          </ul>
+        </div>
+
+        <div class="support-info">
+          <h2>Get in Touch</h2>
+          <p>Have feedback, ideas, or want to collaborate? Reach out through our <a href="{{ url_for('support') }}">Support page</a> or email us directly!</p>
+        </div>
+
+        <div class="final-mensage">
+          <p class="quote">"Efficiency and simplicity — that’s how we survive the island."</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="content-footer">
+      <div class="container-footer">
+        <h1>footer</h1>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

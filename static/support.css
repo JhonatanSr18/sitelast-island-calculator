@@ -9,32 +9,40 @@ body {
   font-family: "Stack Sans Notch", sans-serif;
   color: #e0e6ee;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HEADER ===== */
 header {
   background: linear-gradient(180deg, #002855 0%, #081420 100%);
-  padding: 20px 0;
+  padding: 20px 10px;
   text-align: center;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 .header_card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .title h1 {
   font-size: 2rem;
   font-weight: 700;
+  word-break: break-word;
 }
 
+/* ===== MENU ===== */
 .header_menu {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  padding: 0 10px;
+  width: 100%;
 }
 
 .header_menu button {
@@ -45,7 +53,8 @@ header {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  white-space: nowrap;
 }
 
 .header_menu button:hover {
@@ -65,13 +74,13 @@ header {
   z-index: -1;
 }
 
-/* ===== SUPPORT CARD (MESMO CARD DO INDEX) ===== */
+/* ===== SUPPORT / RESULT / DONATION CARDS ===== */
 .card-support {
   background: rgba(8, 20, 32, 0.85);
   border-radius: 20px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
   max-width: 500px;
-  width: 100%;
+  width: 92%;
   padding: 40px 30px;
   margin: 40px auto;
   text-align: center;
@@ -83,6 +92,7 @@ header {
   font-size: 1.8rem;
   margin-bottom: 25px;
   color: #ffffff;
+  word-wrap: break-word;
 }
 
 /* ===== FORM ===== */
@@ -90,6 +100,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 label {
@@ -109,25 +120,25 @@ textarea {
   outline: none;
   font-size: 1rem;
   color: #081420;
+  background: #fff;
 }
 
-/* Ajuste extra para textarea */
 textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-/* ===== SEND BUTTON ===== */
+/* ===== SUBMIT BUTTON ===== */
 button[type="submit"] {
   background: #00b8a9;
   color: #081420;
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  padding: 12px 20px;
+  padding: 12px;
   cursor: pointer;
   width: 100%;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 button[type="submit"]:hover {
@@ -140,7 +151,7 @@ button[type="submit"]:hover {
   background: rgba(0, 255, 100, 0.2);
   border: 1px solid #28ff97;
   color: #afffd4;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   margin-top: 15px;
   text-align: center;
@@ -151,7 +162,7 @@ button[type="submit"]:hover {
 .btn {
   display: block;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   color: #00b8a9;
   text-decoration: none;
   font-weight: bold;
@@ -166,10 +177,12 @@ button[type="submit"]:hover {
 footer {
   background: linear-gradient(180deg, #002855 0%, #081420 100%);
   color: #fff;
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   border-radius: 20px 20px 0 0;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-top: 40px;
 }
 
 .container-footer h2 {
@@ -193,20 +206,40 @@ footer {
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .title h1 {
-    font-size: 1.6rem;
-  }
-
-  .header_menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .header_menu button {
-    font-size: 0.9rem;
-    padding: 6px 12px;
+    font-size: 1.5rem;
   }
 
   .card-support {
-    padding: 25px 15px;
+    padding: 25px 20px;
+    width: 92%;
+    margin: 30px auto;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+  }
+
+  .header_menu button {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .title h1 {
+    font-size: 1.3rem;
+  }
+
+  .header_menu {
+    gap: 6px;
+  }
+
+  .card-support {
+    padding: 20px 15px;
   }
 }

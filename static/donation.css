@@ -9,12 +9,13 @@ body {
   font-family: "Stack Sans Notch", sans-serif;
   color: #e0e6ee;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HEADER ===== */
 header {
   background: linear-gradient(180deg, #002855 0%, #081420 100%);
-  padding: 20px 0;
+  padding: 20px 10px;
   text-align: center;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -30,10 +31,14 @@ header {
 .title h1 {
   font-size: 2rem;
   font-weight: 700;
+  word-break: break-word;
 }
 
+/* ===== MENU ===== */
 .header_menu {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -45,7 +50,8 @@ header {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  white-space: nowrap;
 }
 
 .header_menu button:hover,
@@ -66,22 +72,22 @@ header {
   z-index: -1;
 }
 
-/* ===== MAIN CARD ===== */
+/* ===== CARD ===== */
 .card {
   background: rgba(8, 20, 32, 0.85);
   border-radius: 20px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
-  max-width: 600px;
-  width: 90%;
+  width: 100%;
+  max-width: 550px;
   margin: 40px auto;
-  padding: 40px 30px;
+  padding: 35px 25px;
   text-align: center;
   backdrop-filter: blur(10px);
   animation: fadeIn 0.6s ease;
 }
 
 .donation-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
@@ -116,11 +122,12 @@ header {
   margin-top: 5px;
 }
 
-
+/* ===== BUTTON ===== */
 .donation-btn {
   display: block;
   margin: 15px auto;
-  width: 200px;
+  width: 100%;
+  max-width: 220px;
   padding: 12px 15px;
   font-size: 1rem;
   border-radius: 10px;
@@ -135,9 +142,7 @@ header {
   background: #10e4cf;
 }
 
-
-
-/* return */
+/* ===== RETURN BUTTON ===== */
 .btn-return {
   display: block;
   margin-top: 25px;
@@ -184,20 +189,34 @@ footer {
     font-size: 1.6rem;
   }
 
-  .header_menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .card {
-    padding: 25px 15px;
+    padding: 25px 18px;
   }
 
   .donation-title {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
   }
 
   .donation-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 20px 12px;
+  }
+
+  .donation-title {
+    font-size: 1.35rem;
+  }
+
+  .donation-btn {
+    max-width: 180px;
+    font-size: 0.9rem;
+  }
+
+  .pix-key {
+    font-size: 0.9rem;
   }
 }

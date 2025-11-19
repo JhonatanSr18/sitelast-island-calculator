@@ -60,6 +60,7 @@ def calculate_bomb_resources(bomb, value):
             'coal': library_base_resorces['coal'] * 75 * value,
             'sulfur': library_base_resorces['sulfur'] * 75 * value,
             'iron': library_base_resorces['iron'] * 75 * value,
+            'oil': library_base_resorces['oil'] * 5 * value,
             'string': library_base_resorces['string'] * value,
             'chip': library_base_resorces['chip'] * value,
         }
@@ -69,6 +70,7 @@ def calculate_bomb_resources(bomb, value):
             'coal': library_base_resorces['coal'] * 125 * value,
             'sulfur': library_base_resorces['sulfur'] * 125 * value,
             'iron': library_base_resorces['iron'] * 125 * value,
+            'oil': library_base_resorces['oil'] * 5 * value,
             'string': library_base_resorces['string'] * value,
             'chip': library_base_resorces['chip'] * value,
             'energy': library_base_resorces['energy'] * value,
